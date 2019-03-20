@@ -17,7 +17,7 @@ public class RandomLightpos : MonoBehaviour
     void Update()
     {
         setRandomPos(0.1f);
-        RandomLerpPos(4.0f);
+        RandomLerpPos(1.0f);
     }
 
 
@@ -30,7 +30,7 @@ public class RandomLightpos : MonoBehaviour
     {
         if (TimeSinceRandomRefresh > interval)
         {
-            randomPos = Random.insideUnitSphere;
+            randomPos = Random.insideUnitSphere * 20;
             randomPos += StartPos;
             Debug.Log(randomPos);
             TimeSinceRandomRefresh = 0.0f;
