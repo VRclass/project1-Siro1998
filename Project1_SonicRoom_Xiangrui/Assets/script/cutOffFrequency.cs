@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioHighPassFilter))]
 
-public class heightPitch : MonoBehaviour
+public class cutOffFrequency : MonoBehaviour
 {
 
     AudioSource audioData;
 
-public Transform rightController;
+    public Transform rightController;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,6 @@ public Transform rightController;
     // Update is called once per frame
     void Update()
     {
-        audioData.pitch = rightController.position.y;
+        GetComponent<AudioHighPassFilter>().cutoffFrequency = rightController.position.y * 100;
     }
 }
