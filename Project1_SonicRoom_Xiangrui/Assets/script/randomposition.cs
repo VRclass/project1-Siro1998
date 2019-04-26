@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class RandomLightpos : MonoBehaviour
+public class randomposition : MonoBehaviour
 {
 
     Vector3 StartPos;
@@ -16,8 +17,8 @@ public class RandomLightpos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setRandomPos(0.1f);
-        RandomLerpPos(1.0f);
+        setRandomPos(1.0f);
+        RandomLerpPos(0.1f);
     }
 
 
@@ -30,9 +31,9 @@ public class RandomLightpos : MonoBehaviour
     {
         if (TimeSinceRandomRefresh > interval)
         {
-            randomPos = Random.insideUnitSphere * 20;
+            randomPos = Random.insideUnitSphere * 10;
             randomPos += StartPos;
-           // Debug.Log(randomPos);
+            // Debug.Log(randomPos);
             TimeSinceRandomRefresh = 0.0f;
         }
         else

@@ -5,9 +5,9 @@ using UnityEngine;
 public class ColorChangeTrigger : MonoBehaviour
 {
     public Color whitecolor;
-    public bool enter = true;
+    public bool enter = false;
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         transform.GetComponent<Renderer>().material.color = whitecolor;
         if (enter)

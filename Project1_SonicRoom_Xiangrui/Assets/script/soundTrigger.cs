@@ -6,13 +6,16 @@ public class soundTrigger : MonoBehaviour
 {
     public AudioSource SoundToPlay;
 
-    void Start()
+    void Awake()
     {
         SoundToPlay = GetComponent<AudioSource>();
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        SoundToPlay.Play ();
+        Debug.Log("yo!");
+        SoundToPlay.Play();
     }
+
+
 }
